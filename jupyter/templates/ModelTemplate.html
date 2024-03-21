@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>주택매매가예측모델</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 300px;
+        }
+      .border_div {
+        border: 1px solid black;
+        padding: 2px;
+      }
+    </style>
+</head>
+<body>
+  <div class = "border_div">
+    <form action="/submit" method="post">
+        <label for="year">건축년도:</label>
+        <input type="text" id="year" name="year"><br><br>
+        
+        <label for="dong">법정동:</label>
+        <input type="text" id="dong" name="dong"><br><br>
+        
+        <label for="size">전용면적:</label>
+        <input type="text" id="size" name="size"><br><br>
+        
+        <label for="jibeon">지번:</label>
+        <input type="text" id="jibeon" name="jibeon"><br><br>
+        
+        <label for="cityName">도시명:</label>
+        <input type="text" id="cityName" name="cityName"><br><br>
+        
+        <label for="guName">구명:</label>
+        <input type="text" id="guName" name="guName"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="border_div">
+      <h4> 예측 결과 </h4>
+            <p>Prediction: {{ prediction }}</p>
+    </div>
+  </div>
+</body>
+</html>
